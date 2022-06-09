@@ -11,7 +11,6 @@ const ProdcutDetails = ({product, products}) => {
     
     const { incQty, decQty, qty, onAdd } = useStateContext()
 
-    console.log(qty)
 
     return(
         <div>
