@@ -9,9 +9,13 @@ const ProdcutDetails = ({product, products}) => {
 
     const [index, setIndex] = useState(0)
     
-    const { incQty, decQty, qty, onAdd } = useStateContext()
+    const { incQty, decQty, qty, onAdd, setShowCart } = useStateContext()
 
+    const handleBuyNow = () => {
+        onAdd(product, qty)
 
+        setShowCart(true)
+    }
     return(
         <div>
             <div className='product-detail-container'>
@@ -21,7 +25,7 @@ const ProdcutDetails = ({product, products}) => {
                     </div>
                         <div className='small-images-container'>
                             {image?.map((item, i) => (
-                                <img src = {urlFor(item)} 
+                                <img key = {i} src = {urlFor(item)} 
                                 className = {i === index ? 'small-image selected-image' : 'small-image'} 
                                 onMouseEnter= {() => setIndex(i)} />
                             ))}
@@ -62,7 +66,7 @@ const ProdcutDetails = ({product, products}) => {
                         <button type='button' className='add-to-cart' onClick = {() => onAdd(product, qty)}>
                             Add to Cart
                         </button>
-                        <button type='button' className='buy-now' onClick ="">
+                        <button type='button' className='buy-now' onClick ={handleBuyNow}>
                             Buy Now
                         </button>
                     </div>
@@ -74,7 +78,7 @@ const ProdcutDetails = ({product, products}) => {
                 <div className='marquee'>
                     <div className='maylike-products-container track'>
                         {products.map((item)=>(
-                            <Product key = {item.id} product = {item}/>
+                            <Product key = {item._id} product = {item}/>
                         ))}
                     </div>
                 </div>
