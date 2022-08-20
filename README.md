@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![This is an image](./public/%F0%9F%9B%92Ecommerce.png)
 
 ___
@@ -26,3 +27,7 @@ ___
 - [React v17](https://reactjs.org/)
 - [Sanity](https://www.sanity.io/)
 - [Stripe](https://stripe.com/en-ca)
+=======
+## Ecommerce
+
+>>>>>>> 7ad036ca11a003628fb0fef31e660475e625e682
